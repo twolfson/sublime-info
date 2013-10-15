@@ -45,7 +45,6 @@ class SublimeInfo(object):
         """
         # If sublime_path is provided, verify it exists
         sublime_path = cls.sublime_path
-        print 'paath', sublime_path
         if sublime_path:
             if not os.path.exists(sublime_path):
                 raise STBadLocationError(
@@ -68,7 +67,7 @@ class SublimeInfo(object):
         :rtype: int
         """
         # Get the path to sublime and grab the version
-        sublime_path = cls._get_sublime_path()
+        sublime_path = cls.get_sublime_path()
         child = subprocess.Popen([sublime_path, '--version'], stdout=subprocess.PIPE)
         version_stdout = str(child.stdout.read())
 

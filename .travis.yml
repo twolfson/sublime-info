@@ -3,11 +3,11 @@ python:
   - "2.7"
   # - "3.3"
 env:
-  # - SUBLIME_TEXT_VERSION="2"
-  # - SUBLIME_TEXT_VERSION="3"
-  # - SUBLIME_TEXT_VERSION="3" SUBLIME_TEXT_RENAME="sublime_text"
+  - SUBLIME_TEXT_VERSION="2"
+  - SUBLIME_TEXT_VERSION="3"
+  - SUBLIME_TEXT_VERSION="3" SUBLIME_TEXT_RENAME="sublime_text"
   - SUBLIME_TEXT_VERSION="3" SUBLIME_TEXT_RENAME="sublime_texttt" SUBLIME_TEXT_PATH="/usr/bin/sublime_texttt"
-  # - SUBLIME_TEXT_VERSION=""
+  - SUBLIME_TEXT_VERSION=""
 
 install:
   # Install Sublime Text
