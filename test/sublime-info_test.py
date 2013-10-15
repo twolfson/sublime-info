@@ -24,7 +24,7 @@ Sublime Text as sublime_texttt
 sublime_info
     attempting to resolve Sublime Text
         when it does not exist
-            raises a SublimeTextNotFoundException
+            raises a STNotFoundError
 
 TODO: What about sublime_text.exe
 TODO: What about sublime_text.app
@@ -39,7 +39,7 @@ TODO: Build version
 if os.environ.get('EXPECT_ERROR', None):
     class TestGetSublimePathError(TestCase):
         def test_get_sublime_path_raises(self):
-            self.assertRaises(sublime_info.SublimeTextNotFoundException,
+            self.assertRaises(sublime_info.STNotFoundError,
                               sublime_info.get_sublime_path)
 
 # Otherwise, run normal tests
