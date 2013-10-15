@@ -1,8 +1,8 @@
 sublime-info
 ============
 
-.. image:: https://travis-ci.org/twolfson/sublime_info.png?branch=master
-   :target: https://travis-ci.org/twolfson/sublime_info
+.. image:: https://travis-ci.org/twolfson/sublime-info.png?branch=master
+   :target: https://travis-ci.org/twolfson/sublime-info
    :alt: Build Status
 
 Gather information about Sublime Text
