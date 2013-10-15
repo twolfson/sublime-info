@@ -5,7 +5,12 @@ sublime-info
    :target: https://travis-ci.org/twolfson/sublime-info
    :alt: Build Status
 
-Gather information about Sublime Text
+Gather information about [Sublime Text][]
+
+This was built for the [Sublime plugin tests][] framework. It provides a cross-platform way to collect data about [Sublime Text][] without running [Sublime Text][] (necessary for creating a plugin harness to [Sublime Text][]).
+
+[Sublime Text]:
+
 
 Getting Started
 ---------------
@@ -13,7 +18,7 @@ Install the module with: ``pip install sublime_info``
 
 .. code:: python
 
-    from sublime_info import run
+    from sublime_info import get_sublime_path
     run()
 
 Documentation
