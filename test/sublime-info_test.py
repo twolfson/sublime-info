@@ -31,7 +31,12 @@ TODO: What about sublime_text.app
 TODO: Create test.sh/cmd for OSX and Windows which do both EXPECT ERROR and not
 
 TODO: Package dir
+TODO: Installed package dir
 TODO: Build version
+# Sublime Text 2 Build 2221
+# Sublime Text Build 3047
+TODO: Platform
+TODO: Arch
 """
 
 

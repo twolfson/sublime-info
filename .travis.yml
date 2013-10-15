@@ -24,6 +24,10 @@ before_script:
   - 'test -n "$SUBLIME_TEXT_VERSION" && export EXPECTED_PATH="/usr/bin/subl" || true'
   - 'test -n "$SUBLIME_TEXT_RENAME" && export EXPECTED_PATH="/usr/bin/$SUBLIME_TEXT_RENAME" || true'
   - 'test -z "$SUBLIME_TEXT_VERSION" && export EXPECT_ERROR="1" || true'
+  - 'test "$SUBLIME_TEXT_VERSION" = "2" && export EXPECTED_PKG_DIR="/home/travis/.config/sublime-text-2/Packages" || true'
+  - 'test "$SUBLIME_TEXT_VERSION" = "2" && export EXPECTED_VERSION="2221" || true'
+  - 'test "$SUBLIME_TEXT_VERSION" = "3" && export EXPECTED_PKG_DIR="/home/travis/.config/sublime-text-3/Packages" || true'
+  - 'test "$SUBLIME_TEXT_VERSION" = "3" && export EXPECTED_VERSION="3047" || true'
 script:
   # Run our tests
   - ./test.sh
