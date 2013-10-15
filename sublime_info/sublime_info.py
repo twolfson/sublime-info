@@ -1,5 +1,11 @@
+# Load in dependencies
+import shutilwhich
+import shutil
+
+
+# Define
 def _get_sublime_path():
-    pass
+    print shutil.which('subl')
 
 
 def get_sublime_path():
@@ -9,4 +15,5 @@ def get_sublime_path():
               Otherwise, a ``which``-like resolution will be returned.
     :rtype: str
     """
-    pass
+    # TODO: environ
+    return _get_sublime_path()
