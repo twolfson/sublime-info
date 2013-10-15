@@ -1,5 +1,7 @@
 # Load in core, 3rd party, and local dependencies
 import os
+import re
+import subprocess
 from shutilwhich import which
 from errors import STNotResolvedError, STBadLocationError
 
@@ -36,7 +38,7 @@ class SublimeInfo(object):
     def get_sublime_path(cls):
         """Resolve Sublime Text path
 
-        :raises STNotFoundError: If Sublime Text cannot be found, an error will be raised
+        :raises STNotFoundError: If Sublime Text cannot be found, an error will be raised.
         :returns: If ``SUBLIME_TEXT_PATH`` is in OS environment, this will be returned.
                   Otherwise, a ``which``-like resolution will be returned.
         :rtype: str
@@ -53,3 +55,28 @@ class SublimeInfo(object):
 
         # Return the found path
         return sublime_path
+
+    @classmethod
+    def get_sublime_version(cls):
+        """Resolve Sublime Text version (e.g. 2221, 3047)
+
+        Sublime Text is resolved via ``get_sublime_path``
+
+        :raises Exception: If the Sublime Text version is not recognized, an error will be raised.
+        :returns: Version of Sublime Text returned by ``sublime_text --version``.
+        :rtype: int
+        """
+        # Get the path to sublime and grab the version
+        sublime_path = cls._get_sublime_path()
+        child = subprocess.Popen([sublime_path, '--version'], stdout=subprocess.PIPE)
+        version_txt = str(child.stdout.read())
+
+        # Kill the child
+        child.kill()
+
+        # Parse out build number from stdout
+        # Sublime Text 2 Build 2221
+        # Sublime Text Build 3047
+        version_match = re.search(r'\d{4}', version_txt)
+        if not version_match:
+            raise Exception('Sublime Text version not found in "%s"' % version_txt)
