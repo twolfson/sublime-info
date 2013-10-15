@@ -7,7 +7,7 @@ env:
   - SUBLIME_TEXT_VERSION="3" EXPECTED_PATH="/usr/bin/subl"
   - SUBLIME_TEXT_VERSION="3" SUBLIME_TEXT_RENAME="sublime_text" EXPECTED_PATH="/usr/bin/sublime_text"
   - SUBLIME_TEXT_VERSION="3" SUBLIME_TEXT_RENAME="sublime_texttt" EXPECTED_PATH="/usr/bin/sublime_texttt"
-  - EXPECT_ERROR=""
+  - EXPECT_ERROR="1"
 
 install:
   # Install Sublime Text
