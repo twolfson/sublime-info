@@ -28,7 +28,7 @@ Install the module with: ``pip install sublime_info``
 
 Documentation
 -------------
-`sublime_info` provides 3 top level functions for your consumption.
+``sublime_info`` provides 3 top level functions for your consumption.
 
 get_sublime_path
 ^^^^^^^^^^^^^^^^
