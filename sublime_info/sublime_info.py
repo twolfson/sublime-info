@@ -45,6 +45,7 @@ class SublimeInfo(object):
         """
         # If sublime_path is provided, verify it exists
         sublime_path = cls.sublime_path
+        print 'paath', sublime_path
         if sublime_path:
             if not os.path.exists(sublime_path):
                 raise STBadLocationError(
