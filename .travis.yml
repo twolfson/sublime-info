@@ -8,7 +8,7 @@ env:
 
 install:
   # Install Sublime Text
-  - http://rawgithub.com/twolfson/sublime-installer/SEMVER/install.sh $SUBLIME_TEXT_VERSION | sh
+  - http://rawgithub.com/twolfson/sublime-installer/0.1.1/install.sh $SUBLIME_TEXT_VERSION | sh
   - subl --version
 
   # Install `sublime_info`
