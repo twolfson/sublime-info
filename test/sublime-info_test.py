@@ -32,4 +32,10 @@ TODO: Build version
 
 class TestGetSublimePath(TestCase):
     def test_get_sublime_path(self):
+        # If we don't have Sublime installed, expect an error
+
+        # Otherwise, verify the path matches
+        # TODO: Realizing for OSX / Windows compat, we should let these be environment vars
+        expected_cmd = os.environ.get('SUBLIME_TEXT_RENAME', 'subl')
+        expected_path = '/usr/bin/expected_cmd' % expected_path
         path = sublime_info.get_sublime_path()
