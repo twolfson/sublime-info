@@ -5,3 +5,7 @@ from errors import *
 # Define sugar methods
 def get_sublime_path():
     return SublimeInfo.get_sublime_path()
+
+
+def get_sublime_version():
+    return SublimeInfo.get_sublime_version()

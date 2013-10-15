@@ -32,9 +32,6 @@ TODO: Create test.sh/cmd for OSX and Windows which do both EXPECT ERROR and not
 
 TODO: Package dir
 TODO: Installed package dir
-TODO: Build version
-# Sublime Text 2 Build 2221
-# Sublime Text Build 3047
 TODO: Platform
 TODO: Arch
 """
@@ -55,3 +52,9 @@ else:
             expected_path = os.environ['EXPECTED_PATH']
             actual_path = sublime_info.get_sublime_path()
             self.assertEqual(expected_path, actual_path)
+
+        def test_get_sublime_version_resolves_version(self):
+            # Verify the path matches
+            expected_version = int(os.environ['EXPECTED_VERSION'])
+            actual_version = sublime_info.get_sublime_version()
+            self.assertEqual(expected_version, actual_version)
