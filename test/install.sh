@@ -8,8 +8,15 @@ if test -n "$SUBLIME_TEXT_VERSION"; then
   # Output Sublime version
   subl --version
 
-  # If there is a rename, rename subl
+  # By default, expect this path
+  EXPECTED_PATH="/usr/bin/subl"
+
+  # If there is a rename, rename subl and update the expected path
   if test -n "$SUBLIME_TEXT_RENAME"; then
     sudo mv /usr/bin/subl /usr/bin/$SUBLIME_TEXT_RENAME
+    EXPECTED_PATH="/usr/bin/$SUBLIME_TEXT_RENAME"
   fi
+else
+# Otherwise, expect an error
+  EXPECT_ERROR="1"
 fi
