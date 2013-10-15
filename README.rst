@@ -33,6 +33,7 @@ Documentation
 get_sublime_path
 ^^^^^^^^^^^^^^^^
 .. code:: python
+
     sublime_info.get_sublime_path()
     """Resolve Sublime Text path (e.g. /usr/bin/subl)
 
@@ -47,6 +48,7 @@ get_sublime_path
 get_sublime_version
 ^^^^^^^^^^^^^^^^^^^
 .. code:: python
+
     sublime_info.get_sublime_version()
     """Resolve Sublime Text version (e.g. 2221, 3047)
 
@@ -60,6 +62,7 @@ get_sublime_version
 get_package_directory
 ^^^^^^^^^^^^^^^^^^^
 .. code:: python
+
     sublime_info.get_package_directory()
     """Resolve Sublime Text package directory (e.g. /home/todd/.config/sublime-text-2/Packages)
 
