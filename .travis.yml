@@ -19,12 +19,12 @@ install:
   # Install dev requirements
   - pip install -r requirements-dev.txt
 
-script:
+before_script:
   # Set up variables for test
   - 'test -n "$SUBLIME_TEXT_VERSION" && export EXPECTED_PATH="/usr/bin/subl"; exit 0'
   - 'test -n "$SUBLIME_TEXT_RENAME" && export EXPECTED_PATH="/usr/bin/$SUBLIME_TEXT_RENAME"; exit 0'
   - 'test -z "$SUBLIME_TEXT_VERSION" && export EXPECT_ERROR="1"; exit 0'
-
+script:
   # Run our tests
   - ./test.sh
 
