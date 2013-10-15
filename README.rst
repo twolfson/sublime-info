@@ -33,7 +33,7 @@ Documentation
 get_sublime_path
 ^^^^^^^^^^^^^^^^
 .. code:: python
-    get_sublime_path()  # /usr/bin/subl
+    sublime_info.get_sublime_path()
     """Resolve Sublime Text path (e.g. /usr/bin/subl)
 
     If ``SUBLIME_TEXT_PATH`` is provided via environment variables, it will be used.
@@ -44,9 +44,33 @@ get_sublime_path
     :rtype: str
     """
 
+get_sublime_version
+^^^^^^^^^^^^^^^^^^^
+.. code:: python
+    sublime_info.get_sublime_version()
+    """Resolve Sublime Text version (e.g. 2221, 3047)
+
+    Sublime Text is resolved via ``get_sublime_path``
+
+    :raises Exception: If the Sublime Text version cannot be parsed, an error will be raised.
+    :returns: Version of Sublime Text returned by ``sublime_text --version``.
+    :rtype: int
+    """
+
+get_package_directory
+^^^^^^^^^^^^^^^^^^^
+.. code:: python
+    sublime_info.get_package_directory()
+    """Resolve Sublime Text package directory (e.g. /home/todd/.config/sublime-text-2/Packages)
+
+    :raises Exception: If the Sublime Text version is not recognized, an error will be raised.
+    :returns: Path to Sublime Text's package directory
+    :rtype: str
+    """
+
 Contributing
 ------------
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Test via ``nosetests``.
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Test via ``./test_linux.sh``.
 
 Donating
 --------
