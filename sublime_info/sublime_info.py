@@ -69,7 +69,7 @@ class SublimeInfo(object):
         # Get the path to sublime and grab the version
         sublime_path = cls._get_sublime_path()
         child = subprocess.Popen([sublime_path, '--version'], stdout=subprocess.PIPE)
-        version_txt = str(child.stdout.read())
+        version_stdout = str(child.stdout.read())
 
         # Kill the child
         child.kill()
@@ -77,6 +77,9 @@ class SublimeInfo(object):
         # Parse out build number from stdout
         # Sublime Text 2 Build 2221
         # Sublime Text Build 3047
-        version_match = re.search(r'\d{4}', version_txt)
+        version_match = re.search(r'\d{4}', version_stdout)
         if not version_match:
-            raise Exception('Sublime Text version not found in "%s"' % version_txt)
+            raise Exception('Sublime Text version not found in "%s"' % version_stdout)
+
+        # Coerce and return the version
+        return int(version_match.group(0))
