@@ -15,7 +15,6 @@ setup(
     author='Todd Wolfson',
     author_email='todd@twolfson.com',
     url='https://github.com/twolfson/sublime-info',
-    bugtrack_url='https://github.com/twolfson/sublime-info/issues',
     download_url='https://github.com/twolfson/sublime-info/archive/master.zip',
     packages=find_packages(),
     license='UNLICENSE',
