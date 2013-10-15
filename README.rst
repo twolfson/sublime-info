@@ -59,7 +59,7 @@ get_sublime_version
     """
 
 get_package_directory
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 .. code:: python
 
     sublime_info.get_package_directory()
