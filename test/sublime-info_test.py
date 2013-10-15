@@ -44,7 +44,7 @@ TODO: Arch
 if os.environ.get('EXPECT_ERROR', None):
     class TestGetSublimePathError(TestCase):
         def test_get_sublime_path_raises(self):
-            self.assertRaises(sublime_info.STNotFoundError,
+            self.assertRaises(sublime_info.errors.STNotFoundError,
                               sublime_info.get_sublime_path)
 
 # Otherwise, run normal tests
