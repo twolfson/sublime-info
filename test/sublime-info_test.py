@@ -41,6 +41,7 @@ TODO: Arch
 if os.environ.get('EXPECT_ERROR', None):
     class TestGetSublimePathError(TestCase):
         def test_get_sublime_path_raises(self):
+            """Assert that we raise an error when Sublime Text is not on disk."""
             self.assertRaises(sublime_info.STNotFoundError,
                               sublime_info.get_sublime_path)
 
@@ -48,13 +49,19 @@ if os.environ.get('EXPECT_ERROR', None):
 else:
     class TestGetSublimePathNormal(TestCase):
         def test_get_sublime_path_finds_path(self):
-            # Verify the path matches
+            """Assert that we find the proper path to Sublime Text."""
             expected_path = os.environ['EXPECTED_PATH']
             actual_path = sublime_info.get_sublime_path()
             self.assertEqual(expected_path, actual_path)
 
         def test_get_sublime_version_resolves_version(self):
-            # Verify the path matches
+            """Assert that we find the proper version of Sublime Text."""
             expected_version = int(os.environ['EXPECTED_VERSION'])
             actual_version = sublime_info.get_sublime_version()
             self.assertEqual(expected_version, actual_version)
+
+        def test_get_sublime_version_locates_pkg_dir(self):
+            """Assert that we find the proper package directory."""
+            expected_pkg_dir = int(os.environ['EXPECTED_PKG_DIR'])
+            actual_pkg_dir = sublime_info.get_package_directory()
+            self.assertEqual(expected_pkg_dir, actual_pkg_dir)
