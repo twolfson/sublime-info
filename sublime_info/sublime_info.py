@@ -38,9 +38,11 @@ class SublimeInfo(object):
     def get_sublime_path(cls):
         """Resolve Sublime Text path (e.g. /usr/bin/subl)
 
+        If ``SUBLIME_TEXT_PATH`` is provided via environment variables, it will be used.
+        Otherwise, a ``which``-like resolution will be returned.
+
         :raises STNotFoundError: If Sublime Text cannot be found, an error will be raised.
-        :returns: If ``SUBLIME_TEXT_PATH`` is in OS environment, this will be returned.
-                  Otherwise, a ``which``-like resolution will be returned.
+        :returns: ``SUBLIME_TEXT_PATH`` or ``which``-like resolution
         :rtype: str
         """
         # If sublime_path is provided, verify it exists
