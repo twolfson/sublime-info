@@ -12,7 +12,6 @@ This was built for the `Sublime plugin tests`_ framework. It provides a cross-pl
 .. _`Sublime Text`: http://sublimetext.com/
 .. _`Sublime plugin tests`: https://github.com/twolfson/sublime-plugin-tests
 
-::
     Currently, only Linux is supported but OSX and Windows support are planned.
 
 Getting Started
