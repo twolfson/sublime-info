@@ -1,2 +1,2 @@
-def sublime_info():
+def run():
     pass

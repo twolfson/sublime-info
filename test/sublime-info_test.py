@@ -1,6 +1,7 @@
 from unittest import TestCase
-from sublime_info import run
+from sublime_info import sublime_info
+
 
 class TestRunFunction(TestCase):
-    def run_exists(self):
-        self.assertTrue(run)
+    def test_run_exists(self):
+        self.assertTrue(bool(sublime_info.run))
