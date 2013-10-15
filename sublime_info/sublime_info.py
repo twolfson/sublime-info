@@ -1,13 +1,18 @@
 # Load in core, 3rd party, and local dependencies
 import os
 from shutilwhich import which
-from sublime_info.errors import STNotResolvedError, STBadLocationError
+from errors import STNotResolvedError, STBadLocationError
 
 
 class SublimeInfo(object):
-    # Define i
-    def __init__(self, sublime_path=os.environ.get('SUBLIME_TEXT_PATH', None)):
-        self.sublime_path = sublime_path
+    # Load in an environment variable constant
+    sublime_path=os.environ.get('SUBLIME_TEXT_PATH', None)
+
+    # Define init
+    def __init__(self, sublime_path=None):
+        # Allow for customizaton of sublime_path
+        if sublime_path:
+            self.sublime_path = sublime_path
 
     # Define internal lookup which ignores
     @classmethod
