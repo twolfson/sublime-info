@@ -12,7 +12,6 @@ env:
 install:
   # Install Sublime Text
   - ./test/install.sh
-  - subl --version
 
   # Install `sublime_info`
   - python setup.py develop
