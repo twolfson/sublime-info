@@ -30,7 +30,6 @@ TODO: What about sublime_text.exe
 TODO: What about sublime_text.app
 TODO: Create test.sh/cmd for OSX and Windows which do both EXPECT ERROR and not
 
-TODO: Package dir
 TODO: Installed package dir
 TODO: Platform
 TODO: Arch
