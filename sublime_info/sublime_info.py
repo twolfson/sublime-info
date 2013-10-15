@@ -36,7 +36,7 @@ class SublimeInfo(object):
 
     @classmethod
     def get_sublime_path(cls):
-        """Resolve Sublime Text path
+        """Resolve Sublime Text path (e.g. /usr/bin/subl)
 
         :raises STNotFoundError: If Sublime Text cannot be found, an error will be raised.
         :returns: If ``SUBLIME_TEXT_PATH`` is in OS environment, this will be returned.
@@ -62,7 +62,7 @@ class SublimeInfo(object):
 
         Sublime Text is resolved via ``get_sublime_path``
 
-        :raises Exception: If the Sublime Text version is not recognized, an error will be raised.
+        :raises Exception: If the Sublime Text version cannot be parsed, an error will be raised.
         :returns: Version of Sublime Text returned by ``sublime_text --version``.
         :rtype: int
         """
@@ -83,3 +83,29 @@ class SublimeInfo(object):
 
         # Coerce and return the version
         return int(version_match.group(0))
+
+    @classmethod
+    def get_package_directory(cls):
+        """Resolve Sublime Text package directory (e.g. /home/todd/.config/sublime-text-2/Packages)
+
+        :raises Exception: If the Sublime Text version is not recognized, an error will be raised.
+        :returns: Path to Sublime Text's package directory
+        :rtype: str
+        """
+        # TODO: On Windows, OSX these will not be the same
+        # Get the version
+        version = cls.get_sublime_version()
+
+        # Run Linux-only logic for pkg_dir
+        pkg_dir = None
+        if version >= 2000 and version < 3000:
+            pkg_dir = os.path.expanduser('~/.config/sublime-text-2/Packages')
+        elif version >= 3000 and version < 4000:
+            pkg_dir = os.path.expanduser('~/.config/sublime-text-3/Packages')
+
+        # Assert the package dir was found
+        if not pkg_dir:
+            raise Exception('Sublime Text version "%s" not recognized' % version)
+
+        # Return the package directory
+        return pkg_dir

@@ -62,6 +62,6 @@ else:
 
         def test_get_sublime_version_locates_pkg_dir(self):
             """Assert that we find the proper package directory."""
-            expected_pkg_dir = int(os.environ['EXPECTED_PKG_DIR'])
+            expected_pkg_dir = os.environ['EXPECTED_PKG_DIR']
             actual_pkg_dir = sublime_info.get_package_directory()
             self.assertEqual(expected_pkg_dir, actual_pkg_dir)
