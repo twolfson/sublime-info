@@ -5,10 +5,13 @@ python:
 env:
   - SUBLIME_TEXT_VERSION="2"
   - SUBLIME_TEXT_VERSION="3"
+  - SUBLIME_TEXT_VERSION="3" SUBLIME_TEXT_RENAME="sublime_text"
+  - SUBLIME_TEXT_VERSION="3" SUBLIME_TEXT_RENAME="sublime_texttt"
+  - SUBLIME_TEXT_VERSION=""
 
 install:
   # Install Sublime Text
-  - curl http://rawgithub.com/twolfson/sublime-installer/0.1.1/install.sh | sh -s $SUBLIME_TEXT_VERSION
+  - ./test/install.sh
   - subl --version
 
   # Install `sublime_info`
@@ -16,7 +19,6 @@ install:
 
   # Install dev requirements
   - pip install -r requirements-dev.txt
-
 
 script:
   # Run our tests

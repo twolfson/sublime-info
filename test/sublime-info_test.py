@@ -3,6 +3,7 @@ from sublime_info import sublime_info
 
 
 """
+# The majority of these will be satisfied via .travis.yml
 Sublime Text as subl
     resolved via `get_sublime_path`
         has a path of `/usr/bin/subl`
@@ -29,7 +30,6 @@ TODO: Build version
 """
 
 
-class TestRunFunction(TestCase):
-    def test_run_exists(self):
-        sublime_info.get_sublime_path()
-        # self.assertTrue(sublime_info.run))
+class TestGetSublimePath(TestCase):
+    def test_get_sublime_path(self):
+        path = sublime_info.get_sublime_path()
