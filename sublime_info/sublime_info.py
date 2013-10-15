@@ -1,4 +1,7 @@
-# Load in dependencies
+# Load in core dependencies
+import os
+
+# Load in 3rd party dependencies
 from shutilwhich import which
 
 
@@ -41,5 +44,14 @@ def get_sublime_path():
     :rtype: str
     """
     # TODO: environ
-    # TODO: If environ exists, still use os.path.exists
-    return _get_sublime_path()
+    sublime_path = os.environ.get('SUBLIME_TEXT_PATH', None)
+    # If sublime_path is provided, verify it exists
+    if sublime_path and not os.path.exists(sublime_path):
+        raise SublimeTextNotAtLocationException(
+                'Sublime Text could not be found at "%s"' % sublime_path)
+    # Otherwise, use the internal lookup
+    else:
+        sublime_path = _get_sublime_path()
+
+    # Return the found path
+    return sublime_path
