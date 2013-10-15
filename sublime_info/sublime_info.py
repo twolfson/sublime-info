@@ -68,6 +68,7 @@ class SublimeInfo(object):
         """
         # Get the path to sublime and grab the version
         sublime_path = cls._get_sublime_path()
+        print sublime_path
         child = subprocess.Popen([sublime_path, '--version'], stdout=subprocess.PIPE)
         version_stdout = str(child.stdout.read())
 
