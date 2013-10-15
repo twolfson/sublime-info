@@ -1,7 +1,11 @@
+# Load in dependencies
+import os
 from unittest import TestCase
+
+# Load in local dependencies
 from sublime_info import sublime_info
 
-
+# Outline tests
 """
 # The majority of these will be satisfied via .travis.yml
 Sublime Text as subl
@@ -24,18 +28,25 @@ sublime_info
 
 TODO: What about sublime_text.exe
 TODO: What about sublime_text.app
+TODO: Create test.sh/cmd for OSX and Windows which do both EXPECT ERROR and not
 
 TODO: Package dir
 TODO: Build version
 """
 
 
-class TestGetSublimePath(TestCase):
-    def test_get_sublime_path(self):
-        # If we don't have Sublime installed, expect an error
+# If we are in an error test
+if os.environ.get('EXPECT_ERROR', None):
+    class TestGetSublimePathError(TestCase):
+        def test_get_sublime_path_raises(self):
+            self.assertRaises(sublime_info.SublimeTextNotFoundException,
+                              sublime_info.get_sublime_path)
 
-        # Otherwise, verify the path matches
-        # TODO: Realizing for OSX / Windows compat, we should let these be environment vars
-        expected_cmd = os.environ.get('SUBLIME_TEXT_RENAME', 'subl')
-        expected_path = '/usr/bin/expected_cmd' % expected_path
-        path = sublime_info.get_sublime_path()
+# Otherwise, run normal tests
+else:
+    class TestGetSublimePathNormal(TestCase):
+        def test_get_sublime_path_finds_path(self):
+            # Verify the path matches
+            expected_path = os.environ['EXPECTED_PATH']
+            actual_path = sublime_info.get_sublime_path()
+            self.assertEqual(expected_path, actual_path)

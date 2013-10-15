@@ -1,0 +1,1 @@
+EXPECTED_PATH=/usr/bin/subl nosetests --nocapture
