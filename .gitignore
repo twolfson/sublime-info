@@ -1,0 +1,4 @@
+*.pyc
+build/
+dist/
+sublime_info.egg-info
