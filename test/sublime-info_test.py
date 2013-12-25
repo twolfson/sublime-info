@@ -5,6 +5,10 @@ from unittest import TestCase
 # Load in local dependencies
 import sublime_info
 
+sublime_path = os.environ.get('SUBLIME_TEXT_PATH')
+print sublime_path
+
+
 # Outline tests
 """
 # The majority of these will be satisfied via .travis.yml

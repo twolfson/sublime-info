@@ -9,8 +9,7 @@ from errors import STNotResolvedError, STBadLocationError
 class SublimeInfo(object):
     # Load in an environment variable constant
     sublime_path = os.environ.get('SUBLIME_TEXT_PATH')
-    print os.environ
-    print sublime_path.__class__
+    print sublime_path
 
     # Define init
     def __init__(self, sublime_path=None):
