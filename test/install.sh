@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+# Exit on first error
+set -e
 
 # If there is a Sublime Text version, then install Sublime
 if test -n "$SUBLIME_TEXT_VERSION"; then
@@ -10,6 +12,6 @@ if test -n "$SUBLIME_TEXT_VERSION"; then
 
   # If there is a rename, rename subl
   if test -n "$SUBLIME_TEXT_RENAME"; then
-    sudo mv /usr/bin/subl /usr/bin/$SUBLIME_TEXT_RENAME
+    sudo mv /usr/bin/subl "/usr/bin/$SUBLIME_TEXT_RENAME"
   fi
 fi
