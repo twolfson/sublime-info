@@ -1,5 +1,7 @@
 sublime-info changelog
 ======================
+0.2.0 - Added Python 3 support via @adambullmer in #5. Fixes #4
+
 0.1.3 - Repaired Travis CI
 
 0.1.2 - Added foundry for release

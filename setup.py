@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='sublime_info',
-    version='0.1.3',
+    version='0.2.0',
     description='Gather information about Sublime Text',
     long_description=open('README.rst').read(),
     keywords=[
