@@ -22,7 +22,7 @@ Install the module with: ``pip install sublime_info``
 
     import sublime_info
     sublime_info.get_sublime_path()  # /usr/bin/subl
-    sublime_info.get_sublime_version()  # 3047
+    sublime_info.get_sublime_version()  # 3083
     sublime_info.get_package_directory()  # /home/todd/.config/sublime-text-2/Packages
 
 Documentation
@@ -49,7 +49,7 @@ get_sublime_version
 .. code:: python
 
     sublime_info.get_sublime_version()
-    """Resolve Sublime Text version (e.g. 2221, 3047)
+    """Resolve Sublime Text version (e.g. 2221, 3083)
 
     Sublime Text is resolved via ``get_sublime_path``
 

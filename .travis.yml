@@ -29,7 +29,7 @@ before_script:
   - 'test "$SUBLIME_TEXT_VERSION" = "2" && export EXPECTED_PKG_DIR="/home/travis/.config/sublime-text-2/Packages" || true'
   - 'test "$SUBLIME_TEXT_VERSION" = "2" && export EXPECTED_VERSION="2221" || true'
   - 'test "$SUBLIME_TEXT_VERSION" = "3" && export EXPECTED_PKG_DIR="/home/travis/.config/sublime-text-3/Packages" || true'
-  - 'test "$SUBLIME_TEXT_VERSION" = "3" && export EXPECTED_VERSION="3047" || true'
+  - 'test "$SUBLIME_TEXT_VERSION" = "3" && export EXPECTED_VERSION="3083" || true'
 script:
   # Run our tests
   - ./test.sh
