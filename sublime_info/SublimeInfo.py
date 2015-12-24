@@ -64,7 +64,7 @@ class SublimeInfo(object):
 
     @classmethod
     def get_sublime_version(cls):
-        """Resolve Sublime Text version (e.g. 2221, 3047)
+        """Resolve Sublime Text version (e.g. 2221, 3083)
 
         Sublime Text is resolved via ``get_sublime_path``
 
@@ -82,7 +82,7 @@ class SublimeInfo(object):
 
         # Parse out build number from stdout
         # Sublime Text 2 Build 2221
-        # Sublime Text Build 3047
+        # Sublime Text Build 3083
         version_match = re.search(r'\d{4}', version_stdout)
         if not version_match:
             raise Exception('Sublime Text version not found in "%s"' % version_stdout)
