@@ -6,7 +6,7 @@ import subprocess
 from sublime_info.errors import STNotResolvedError, STBadLocationError
 try:
     from shutil import which
-except ImportError:  # python 2 fallback
+except ImportError:  # Python 2 fallback
     from shutilwhich import which
 
 
