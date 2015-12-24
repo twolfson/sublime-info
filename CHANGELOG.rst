@@ -1,5 +1,7 @@
 sublime-info changelog
 ======================
+0.1.2 - Added foundry for release
+
 0.1.1 - Fix for README in PyPI
 
 0.1.0 - Initial release
