@@ -1,6 +1,7 @@
 # Load in local modules for extension
-from sublime_info import SublimeInfo
-from errors import *
+from __future__ import absolute_import
+from sublime_info.SublimeInfo import SublimeInfo
+from sublime_info.errors import *
 
 # Define sugar methods
 def get_sublime_path():

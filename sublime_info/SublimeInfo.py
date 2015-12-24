@@ -1,9 +1,13 @@
 # Load in core, 3rd party, and local dependencies
+from __future__ import absolute_import
 import os
 import re
 import subprocess
-from shutilwhich import which
-from errors import STNotResolvedError, STBadLocationError
+from sublime_info.errors import STNotResolvedError, STBadLocationError
+try:
+    from shutil import which
+except ImportError:  # python 2 fallback
+    from shutilwhich import which
 
 
 class SublimeInfo(object):
